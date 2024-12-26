@@ -98,6 +98,6 @@
         postman
         nixd
         distrobox
-        pgadmin4
+        dbeaver-bin
     ];
 }
