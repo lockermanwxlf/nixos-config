@@ -66,8 +66,26 @@
     programs.vscode = {
         enable = true;
         extensions = with pkgs.vscode-extensions; [
-            bbenoist.nix
+            
+        ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+            {
+                name = "nix-ide";
+                publisher = "jnoortheen";
+                version = "0.3.5";
+                sha256 = "862c85655b19931a5cd8a874ce2dcd1b003f1546deb404bd9215b161eb314f8b";
+            }
         ];
+        userSettings = {
+            "dev.containers.dockerPath" = "podman";
+            "extensions.ignoreRecommendations" = true;
+            "nix.serverPath" = "nixd";
+            "nix.enableLanguageServer" = true;
+            "[nix]" = {
+                "editor.insertSpaces" = true;
+                "editor.tabSize" = 4;
+            };
+            "git.autofetch" = true;
+        };
     };
 
     # Podman
