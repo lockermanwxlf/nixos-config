@@ -19,6 +19,7 @@
   # SDDM
   services.displayManager.sddm = {
     enable = true;
+    wayland.enable = true;
   };
 
   # Packages
@@ -75,6 +76,7 @@
     isNormalUser = true;
     description = "Jake Bounds";
     shell = pkgs.fish;
+    initialPassword = "";
     extraGroups = [
       "networkmanager"
       "wheel"

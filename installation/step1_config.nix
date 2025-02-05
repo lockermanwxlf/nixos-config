@@ -15,6 +15,7 @@
   users.users.jake = {
     isNormalUser = true;
     description = "Jake Bounds";
+    initialPassword = "";
     extraGroups = [
       "networkmanager"
       "wheel"
